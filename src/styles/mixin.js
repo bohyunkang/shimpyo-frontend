@@ -11,6 +11,14 @@ const flexBox = (
   align-items: ${align};
 `;
 
+const searchField = () => css`
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+
+  background-color: #F5F5F5;
+`;
+
 const b4 = () => css`
   font-size: 12px;
   font-weight: 400;
@@ -23,6 +31,7 @@ const b4Bold = () => css`
 
 const mixin = {
   flexBox,
+  searchField,
   b4,
   b4Bold,
 };
