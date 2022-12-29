@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-
 import styled from 'styled-components';
 
 import NAV_ITEM from '../../../constants/bottomNav';
@@ -12,6 +11,10 @@ const ListWrapper = styled.ul`
 
   position: fixed;
   bottom: 0;
+  z-index: 1;
+
+  border-top: 1px solid ${(({ theme }) => theme.colors.border)};
+  background-color: ${(({ theme }) => theme.colors.background)};
 `;
 
 const ItemWrapper = styled.li`

@@ -1,9 +1,14 @@
 const theme = {
   colors: {
     background: '#FFFFFF',
-    dimmed: '#F6F6F6',
+    inputBackground: '#F5F5F5',
+    buttonBackground: '#F7F7F7',
+    cardBackground: '#F7F7F7',
+    dimmed: '#B9B9B9',
     primary: '#FB3959',
     secondary: '#66CFCA',
+    border: '#E0E0E0',
+    miniBorder: '#CCCCCC',
   },
   textColors: {
     default: '#222222',

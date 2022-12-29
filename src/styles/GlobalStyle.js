@@ -15,6 +15,24 @@ const GlobalStyle = createGlobalStyle`
     color: ${(({ theme }) => theme.textColors.default)};
     text-decoration: none;
   }
+  
+  input {
+    border: none;
+
+    :focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background: inherit;
+    border:none;
+    box-shadow:none;
+    border-radius:0;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+  }
 
 `;
 

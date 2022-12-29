@@ -6,7 +6,7 @@ import { Logo, Search } from '../../../assets/icons/header';
 const Container = styled.div`
   ${(({ theme }) => theme.flexBox('row', 'space-between', 'center'))};
 
-  padding: 20px;
+  padding: 20px 16px;
 `;
 
 const LogoWrapper = styled.h1`
