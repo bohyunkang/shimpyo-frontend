@@ -134,3 +134,6 @@ dist
 
 # CodeceptJS
 output/
+
+# UI 스타일링 위한 목데이터
+mocks/
