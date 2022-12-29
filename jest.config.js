@@ -4,7 +4,8 @@ module.exports = {
     '@testing-library/jest-dom/extend-expect',
   ],
   moduleNameMapper: {
-    '.+\\.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|style|less|sass|scss|ttf|woff|woff2)$': 'identity-obj-proxy',
     '^.+\\.svg$': 'jest-svg-transformer',
   },
   transform: {
