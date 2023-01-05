@@ -8,6 +8,8 @@ import GlobalStyle from './styles/GlobalStyle';
 
 import HomePage from './pages/Home/HomePage';
 import CategoryPage from './pages/Category/CategoryPage';
+import ReservationHistoryPage from './pages/reservations/ReservationHistoryPage';
+import ProfilePage from './pages/profile/ProfilePage';
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/programs" element={<CategoryPage />} />
+        <Route path="/reservations" element={<ReservationHistoryPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </ThemeProvider>
   );

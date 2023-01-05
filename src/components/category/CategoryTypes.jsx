@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import CATEGORY_ITEM from '../../constants/category';
+import CATEGORY_TYPE from '../../constants/category';
 import CategoryButton from '../common/button/CategoryButton';
 
 const ButtonList = styled.ul`
@@ -12,7 +12,7 @@ const ButtonList = styled.ul`
 export default function CategoryTypes() {
   return (
     <ButtonList>
-      {CATEGORY_ITEM.map((item) => (
+      {CATEGORY_TYPE.map((item) => (
         <li key={item.name}>
           <CategoryButton
             name={item.name}

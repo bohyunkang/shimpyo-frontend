@@ -2,14 +2,7 @@ import styled from 'styled-components';
 
 import Image from '../../../assets/mocks/백련사.png';
 
-import { numberFormat, shortAddressFormat } from '../../../utils/format';
-
-const programInfo = {
-  imageUrl: Image,
-  title: '[백련사] 따뜻한 위로의 차담, 만덕산 옛길 산책',
-  price: 70000,
-  address: '전라남도 강진군 도암면 백련사길 145',
-};
+import { titleFormat, numberFormat, shortAddressFormat } from '../../../utils/format';
 
 const ItemWrapper = styled.li`
   width: 358px;
@@ -67,18 +60,18 @@ const PriceAndAddress = styled.div`
   }
 `;
 
-export default function ProgramItem() {
+export default function ProgramItem({ program }) {
   const {
-    imageUrl, title, price, address,
-  } = programInfo;
+    location, title, price, address,
+  } = program;
 
   return (
     <ItemWrapper>
       <ImageWrapper>
-        <img src={imageUrl} alt="프로그램 썸네일" />
+        <img src={Image} alt="프로그램 썸네일" />
       </ImageWrapper>
       <DescWrapper>
-        <Title>{title}</Title>
+        <Title>{titleFormat(location, title)}</Title>
         <PriceAndAddress>
           <h5>
             <strong>{numberFormat(price)}</strong>

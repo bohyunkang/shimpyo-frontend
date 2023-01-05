@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import useProgramStore from '../../hooks/useProgramStore';
+
 import BackButton from '../common/button/BackButton';
 import SearchInput from '../common/input/SearchInput';
 import MainTitle from '../common/title/MainTitle';
@@ -25,6 +27,13 @@ const BackAndSearch = styled.div`
 `;
 
 export default function Category() {
+  // TODO: 닉네임은 유저의 닉네임을 가지고 와야 한다.
+  const nickname = '보니';
+
+  const programStore = useProgramStore();
+
+  const { programs } = programStore;
+
   return (
     <CategoryWrapper>
       <LayoutWrapper>
@@ -39,10 +48,10 @@ export default function Category() {
         <MoreCategory />
         <SubTitle
           section="전체 프로그램"
-          sub={'힐링이 필요한\n보니님을 위해서'}
+          sub={`힐링이 필요한\n${nickname}님을 위해서`}
         />
       </LayoutWrapper>
-      <ProgramList />
+      <ProgramList programs={programs} />
     </CategoryWrapper>
   );
 }

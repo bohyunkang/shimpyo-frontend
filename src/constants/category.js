@@ -1,4 +1,4 @@
-const CATEGORY_ITEM = [
+const CATEGORY_TYPE = [
   {
     name: '템플스테이',
     path: '/programs?category=temple',
@@ -21,4 +21,4 @@ const CATEGORY_ITEM = [
   },
 ];
 
-export default CATEGORY_ITEM;
+export default CATEGORY_TYPE;
