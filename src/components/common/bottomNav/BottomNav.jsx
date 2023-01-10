@@ -57,7 +57,7 @@ export default function BottomNav() {
   return (
     <ListWrapper>
       {NAV_ITEM.map((item) => (
-        <ItemWrapper key={item.name}>
+        <ItemWrapper key={item.id}>
           <StyledLink to={item.path}>
             <IconWrapper>
               <img src={isActive(item)} alt={`${item.name} 아이콘`} />
