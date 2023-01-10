@@ -13,6 +13,10 @@ const theme = {
   textColors: {
     default: '#222222',
     primary: '#FB3959',
+    content: '#4A4A4A',
+    button: '#7F7F7F',
+    black: '#333333',
+    purple: '#A351FB',
   },
   spacing: {
   },

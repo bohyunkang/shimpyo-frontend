@@ -13,7 +13,7 @@ export default function CategoryTypes() {
   return (
     <ButtonList>
       {CATEGORY_TYPE.map((item) => (
-        <li key={item.name}>
+        <li key={item.id}>
           <CategoryButton
             name={item.name}
             path={item.path}

@@ -8,17 +8,21 @@ import GlobalStyle from './styles/GlobalStyle';
 
 import HomePage from './pages/Home/HomePage';
 import CategoryPage from './pages/Category/CategoryPage';
-import ReservationHistoryPage from './pages/reservations/ReservationHistoryPage';
+import ReservationHistoryPage from './pages/reservation/ReservationHistoryPage';
 import ProfilePage from './pages/profile/ProfilePage';
+import ProgramDetailPage from './pages/program/ProgramDetailPage';
+import ScrollToTop from './components/common/ScrollToTop';
 
 export default function App() {
   return (
     <ThemeProvider theme={{ ...theme, ...mixin }}>
       <Reset />
       <GlobalStyle />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/programs" element={<CategoryPage />} />
+        <Route path="/programs/:id" element={<ProgramDetailPage />} />
         <Route path="/reservations" element={<ReservationHistoryPage />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
