@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+
+import { timeFormat } from '../../utils/format';
+
 import PLACE_OFFERS from '../../constants/placeOffers';
 import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
 
@@ -100,6 +103,10 @@ const RuleItem = styled.li`
 `;
 
 export default function PlaceOffersAndRules({ offers, time, rules }) {
+  if (!offers || !time || !rules) {
+    return <p>로딩 중 입니다..</p>;
+  }
+
   const services = PLACE_OFFERS.filter((item) => offers.includes(item.name));
   const { checkInStart, checkInEnd, checkOut } = time;
 
@@ -130,9 +137,9 @@ export default function PlaceOffersAndRules({ offers, time, rules }) {
             </thead>
             <tbody>
               <tr>
-                <td>{`${checkInStart} - ${checkInEnd}`}</td>
+                <td>{`${timeFormat(checkInStart)} - ${timeFormat(checkInEnd)}`}</td>
                 <td>
-                  {checkOut}
+                  {timeFormat(checkOut)}
                   {' '}
                   이전
                 </td>
@@ -141,10 +148,8 @@ export default function PlaceOffersAndRules({ offers, time, rules }) {
           </Table>
         </TableWrapper>
         <RuleList>
-          {rules.map((rule, i) => (
-            // TODO: index 말고 id로 변경해야 함
-            // eslint-disable-next-line react/no-array-index-key
-            <RuleItem key={i}>
+          {rules.map((rule) => (
+            <RuleItem key={rule}>
               <span>·</span>
               <p>{rule}</p>
             </RuleItem>

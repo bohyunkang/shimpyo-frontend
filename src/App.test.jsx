@@ -3,6 +3,8 @@ import { MemoryRouter } from 'react-router-dom';
 
 import App from './App';
 
+window.scrollTo = jest.fn();
+
 test('App', () => {
   render((
     <MemoryRouter>

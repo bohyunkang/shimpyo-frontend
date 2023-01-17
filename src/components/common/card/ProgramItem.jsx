@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Image from '../../../assets/mocks/백련사.png';
-
 import { titleFormat, numberFormat, shortAddressFormat } from '../../../utils/format';
 
 const ItemWrapper = styled.li`
@@ -63,23 +61,23 @@ const PriceAndAddress = styled.div`
 
 export default function ProgramItem({ program }) {
   const {
-    id, location, title, price, address,
+    id, imageUrl, place, title, price,
   } = program;
 
   return (
     <Link to={`/programs/${id}`}>
       <ItemWrapper>
         <ImageWrapper>
-          <img src={Image} alt="프로그램 썸네일" />
+          <img src={imageUrl} alt="프로그램 썸네일" />
         </ImageWrapper>
         <DescWrapper>
-          <Title>{titleFormat(location, title)}</Title>
+          <Title>{titleFormat(place.name, title)}</Title>
           <PriceAndAddress>
             <h5>
               <strong>{numberFormat(price)}</strong>
               원
             </h5>
-            <address>{shortAddressFormat(address)}</address>
+            <address>{shortAddressFormat(place.address)}</address>
           </PriceAndAddress>
         </DescWrapper>
       </ItemWrapper>

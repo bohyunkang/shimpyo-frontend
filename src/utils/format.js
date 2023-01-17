@@ -9,3 +9,17 @@ export function shortAddressFormat(address) {
 export function titleFormat(location, title) {
   return `[${location}] ${title}`;
 }
+
+export function timeFormat(time) {
+  if (time === '24') {
+    return '자정';
+  }
+
+  return `${time}:00`;
+}
+
+export function phoneNumberFormat(number) {
+  return number
+    .replace(/[^0-9]/g, '')
+    .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, '$1-$2-$3');
+}
