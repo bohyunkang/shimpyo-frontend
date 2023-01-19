@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import PrimaryButton from '../common/button/ui/PrimaryButton';
 
@@ -15,20 +14,14 @@ const Container = styled.article`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export default function ReservationButton({ id }) {
-  const navigate = useNavigate();
-
-  const handleClickButton = () => {
-    navigate(`/reservation?program=${id}`);
-  };
-
+export default function CompletionButton({ text, onClick }) {
   return (
     <Container>
       <PrimaryButton
         type="button"
-        onClick={handleClickButton}
+        onClick={onClick}
       >
-        예약하기
+        {text}
       </PrimaryButton>
     </Container>
   );

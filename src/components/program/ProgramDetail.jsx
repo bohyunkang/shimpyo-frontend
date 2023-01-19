@@ -35,7 +35,7 @@ export default function ProgramDetail() {
         rules={program.rules}
       />
       <PlaceLocation place={program.place} />
-      <ReservationButton />
+      <ReservationButton id={program.id} />
     </Container>
   );
 }
