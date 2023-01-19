@@ -1,8 +1,9 @@
 import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
-import { Marker } from '../../assets/icons/program';
 import { numberFormat, titleFormat } from '../../utils/format';
+
+import { Marker } from '../../assets/icons/program';
 
 const Container = styled.article`
   position: relative;
@@ -58,6 +59,10 @@ export default function ProgramThumbnail({ program }) {
   const {
     title, price, imageUrl, place,
   } = program;
+
+  if (!place) {
+    return <p>로딩 중입니다</p>;
+  }
 
   return (
     <Container>

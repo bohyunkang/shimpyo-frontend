@@ -18,6 +18,12 @@ export default class ApiService {
 
     return { programs };
   }
+
+  async fetchProgram(id) {
+    const { data } = await this.instance.get(`/programs/${id}`);
+
+    return data;
+  }
 }
 
 export const apiService = new ApiService();

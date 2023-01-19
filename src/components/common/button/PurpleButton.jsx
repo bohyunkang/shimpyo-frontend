@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ArrowDownPurple } from '../../../assets/icons/program';
+import { ArrowDownPurple, ArrowUpPurple } from '../../../assets/icons/program';
 
 const Button = styled.button`
   font-size: 16px;
@@ -14,13 +14,23 @@ const Button = styled.button`
 
     vertical-align: sub;
   }
+
+  img {
+    width: 9px;
+    height: 5px;
+  }
 `;
 
-export default function PurpleButton({ text }) {
+export default function PurpleButton({ text, onClick, iconDirection }) {
+  const setIconDirection = (direction) => (direction ? ArrowUpPurple : ArrowDownPurple);
+
   return (
-    <Button type="button">
+    <Button
+      type="button"
+      onClick={onClick}
+    >
       <span>{text}</span>
-      <img src={ArrowDownPurple} alt="화살표 아래 아이콘" />
+      <img src={setIconDirection(iconDirection)} alt="화살표 아이콘" />
     </Button>
   );
 }

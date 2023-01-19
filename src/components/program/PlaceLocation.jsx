@@ -1,7 +1,10 @@
 import styled from 'styled-components';
-import { isPickup } from '../../utils/message';
-import PurpleButton from '../common/button/PurpleButton';
+
+import { phoneNumberFormat } from '../../utils/format';
+import { isPickUp } from '../../utils/message';
+
 import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PurpleButton from '../common/button/PurpleButton';
 
 const Container = styled.article`
   padding-bottom: 20px;
@@ -36,7 +39,7 @@ const DescGrid = styled.dl`
     grid-template-columns: 40px auto;
   }
 
-  .pickup {
+  .pickUp {
     grid-template-columns: 40px auto;
   }
 `;
@@ -72,7 +75,11 @@ const Button = styled.button`
 `;
 
 export default function PlaceLocation({ place }) {
-  const { address, phoneNumber, pickup } = place;
+  if (!place) {
+    return <p>로딩 중입니다...</p>;
+  }
+
+  const { address, phoneNumber, pickUp } = place;
 
   return (
     <Container>
@@ -92,11 +99,11 @@ export default function PlaceLocation({ place }) {
           </DescItemWrapper>
           <DescItemWrapper className="phone-number">
             <dt>전화</dt>
-            <dd>{phoneNumber}</dd>
+            <dd>{phoneNumberFormat(phoneNumber)}</dd>
           </DescItemWrapper>
-          <DescItemWrapper className="pickup">
+          <DescItemWrapper className="pickUp">
             <dt>픽업</dt>
-            <dd>{isPickup(pickup)}</dd>
+            <dd>{isPickUp(pickUp)}</dd>
           </DescItemWrapper>
         </DescGrid>
         <PurpleButton text="대중교통 길 찾기" />

@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import useProgramStore from '../../hooks/useProgramStore';
 
-import Category from '../../components/category/Category';
 import Layout from '../../layouts/Layout';
+import Category from '../../components/category/Category';
 
 export default function CategoryPage() {
   const programStore = useProgramStore();
