@@ -51,7 +51,7 @@ const Address = styled.h5`
 const StyledHashLink = styled(HashLink)`
   font-size: 14px;
   font-weight: 600;
-  color: #A8A8A8;
+  color: ${({ theme }) => theme.textColors.lightGray};
   text-decoration: underline;
 `;
 
