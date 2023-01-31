@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
 
 const Container = styled.article`
+  margin-bottom: 10px;
+
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
@@ -17,6 +19,10 @@ const Detail = styled.dl`
 
   dd {
     font-weight: 600;
+  }
+
+  .highlight {
+    color: ${({ theme }) => theme.textColors.primary};
   }
 `;
 
@@ -38,26 +44,29 @@ const Total = styled.dl`
   }
 `;
 
-export default function TotalPrice() {
+export default function PaymentAmount() {
   return (
     <Container>
-      <ProgramSectionTitle>금액 정보</ProgramSectionTitle>
+      <ProgramSectionTitle>결제 금액</ProgramSectionTitle>
       <Content>
         <Detail>
           <DescWrapper>
-            <dt>예약 금액</dt>
-            <dd>80,000원</dd>
+            <dt>결제 금액</dt>
+            <dd>90,200원</dd>
           </DescWrapper>
           <DescWrapper>
-            <dt>서비스 수수료</dt>
-            {/* TODO: 서비스 수수료 14%로 책정, 연산 함수 작성 필요! */}
-            <dd>11,200원</dd>
+            <dt>쿠폰 사용</dt>
+            <dd className="highlight">-5,000원</dd>
+          </DescWrapper>
+          <DescWrapper>
+            <dt>포인트 사용</dt>
+            <dd>0원</dd>
           </DescWrapper>
         </Detail>
         <Total>
           <DescWrapper>
-            <dt>결제 금액</dt>
-            <dd>90,200원</dd>
+            <dt>총 결제 금액</dt>
+            <dd>85,200원</dd>
           </DescWrapper>
         </Total>
       </Content>
