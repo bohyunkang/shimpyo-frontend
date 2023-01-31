@@ -23,3 +23,7 @@ export function phoneNumberFormat(number) {
     .replace(/[^0-9]/g, '')
     .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, '$1-$2-$3');
 }
+
+export function lineBreakFormat(text, breakpoint) {
+  return text.split(breakpoint).join(`${breakpoint}\n`);
+}
