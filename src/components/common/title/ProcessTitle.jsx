@@ -8,6 +8,7 @@ const Title = styled.h2`
   text-align: center;
 
   color: ${(({ theme }) => theme.textColors.black)};
+  background-color: ${(({ theme }) => theme.colors.background)};
 `;
 
 export default function ProcessTitle({ title }) {

@@ -11,6 +11,21 @@ import ReservationButton from './ReservationButton';
 
 import useProgramStore from '../../hooks/useProgramStore';
 
+const Container = styled.article`
+  position: relative;
+  padding-bottom: 111px;
+
+  background-color: ${({ theme }) => theme.colors.cardBackground};
+`;
+
+const BackButtonWrapper = styled.div`
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  z-index: 1;
+`;
+
 export default function ProgramDetail() {
   const programStore = useProgramStore();
 
@@ -39,18 +54,3 @@ export default function ProgramDetail() {
     </Container>
   );
 }
-
-const Container = styled.article`
-  position: relative;
-  padding-bottom: 111px;
-
-  background-color: ${({ theme }) => theme.colors.cardBackground};
-`;
-
-const BackButtonWrapper = styled.div`
-  position: absolute;
-  top: 16px;
-  left: 16px;
-
-  z-index: 1;
-`;

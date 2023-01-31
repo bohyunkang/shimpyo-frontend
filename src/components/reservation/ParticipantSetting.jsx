@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+
+import useReservationStore from '../../hooks/useReservationStore';
+
 import BackButton from '../common/button/BackButton';
-import CounterButton from '../common/button/ui/CounterButton';
-import MainTitle from '../common/title/MainTitle';
 import ProcessTitle from '../common/title/ProcessTitle';
 import CompletionButton from './CompletionButton';
 
-import {
-  PlusWhite, MinusGray,
-} from '../../assets/icons/reservation';
+import MainTitle from '../common/title/MainTitle';
+import CounterMinusButton from '../common/button/CounterMinusButton';
+import CounterPlusButton from '../common/button/CounterPlusButton';
 
 const Container = styled.article`
   position: relative;
@@ -22,7 +23,7 @@ const BackButtonWrapper = styled.div`
   z-index: 1;
 `;
 
-const ContentWrapper = styled.div`
+const Content = styled.article`
   padding-inline: 16px;
 `;
 
@@ -86,13 +87,15 @@ const CounterWrapper = styled.div`
   }
 `;
 
-export default function OptionSetting() {
+export default function ParticipantSetting() {
+  const reservationStore = useReservationStore();
+
   const handleClickReset = () => {
-    // TODO: 인원 수 초기화
+    // TODO: 수량 리셋하게 설정
   };
 
   const handleClickNext = () => {
-    // TODO: 다음 화면으로 넘어가게 설정
+    reservationStore.goToNextProcess();
   };
 
   return (
@@ -101,9 +104,9 @@ export default function OptionSetting() {
         <BackButton color="black" />
       </BackButtonWrapper>
       <ProcessTitle title="예약옵션" />
-      <ContentWrapper>
+      <Content>
         <TitleWrapper>
-          <MainTitle title={'인원 수를\n선택해주세요'} />
+          <MainTitle title={'인원수를\n선택해주세요'} />
           <ResetButton
             type="button"
             onClick={handleClickReset}
@@ -115,13 +118,9 @@ export default function OptionSetting() {
           <OptionWrapper>
             <h3>성인</h3>
             <CounterWrapper>
-              <CounterButton type="button" disabled>
-                <img src={MinusGray} alt="수량 마이너스 버튼" />
-              </CounterButton>
+              <CounterMinusButton disabled />
               <span>0</span>
-              <CounterButton type="button">
-                <img src={PlusWhite} alt="수량 플러스 버튼" />
-              </CounterButton>
+              <CounterPlusButton />
             </CounterWrapper>
           </OptionWrapper>
           <OptionWrapper>
@@ -130,17 +129,13 @@ export default function OptionSetting() {
               <span>만 2세~12세</span>
             </h3>
             <CounterWrapper>
-              <CounterButton type="button" disabled>
-                <img src={MinusGray} alt="수량 마이너스 버튼" />
-              </CounterButton>
+              <CounterMinusButton disabled />
               <span>0</span>
-              <CounterButton type="button">
-                <img src={PlusWhite} alt="수량 플러스 버튼" />
-              </CounterButton>
+              <CounterPlusButton />
             </CounterWrapper>
           </OptionWrapper>
         </SettingWrapper>
-      </ContentWrapper>
+      </Content>
       <CompletionButton
         text="선택완료"
         onClick={handleClickNext}
