@@ -2,20 +2,6 @@ import styled from 'styled-components';
 
 import ProgramItem from './ProgramItem';
 
-export default function ProgramList({ programs }) {
-  if (!programs) {
-    return <p>로딩 중입니다..</p>;
-  }
-
-  return (
-    <ListWrapper>
-      {programs.map((program) => (
-        <ProgramItem key={program.id} program={program} />
-      ))}
-    </ListWrapper>
-  );
-}
-
 const ListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
@@ -25,3 +11,20 @@ const ListWrapper = styled.ul`
 
   background-color: ${(({ theme }) => theme.colors.cardBackground)};
 `;
+
+export default function ProgramList({ programs }) {
+  if (!programs) {
+    return <p>로딩 중입니다..</p>;
+  }
+
+  return (
+    <ListWrapper>
+      {programs.map((program) => (
+        <ProgramItem
+          key={program.id}
+          program={program}
+        />
+      ))}
+    </ListWrapper>
+  );
+}

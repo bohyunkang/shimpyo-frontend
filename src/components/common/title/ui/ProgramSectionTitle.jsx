@@ -8,7 +8,7 @@ const ProgramSectionTitle = styled.h2`
   line-height: 30px;
   letter-spacing: -0.5px;
 
-  color: ${({ theme }) => theme.textColors.black};
+  color: ${({ theme }) => theme.textColors.default};
 `;
 
 export default ProgramSectionTitle;
