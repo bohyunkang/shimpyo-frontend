@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 const CounterButton = styled.button`
-  width: 36px;
-  height: 36px;
+width: ${((props) => (props.size === 'small' ? '18px' : '36px'))};
+height: ${((props) => (props.size === 'small' ? '18px' : '36px'))};
 
-  padding: 10px;
+background-color: ${((props) => (props.disabled ? '#F0F0F0' : props.theme.textColors.primary))};
+border-radius: ${((props) => (props.size === 'small' ? '4px' : '8px'))};
 
-  background-color: ${((props) => (props.disabled ? '#F0F0F0' : props.theme.textColors.primary))};
-  border-radius: 8px;
-
-  img {
-    vertical-align: middle;
-  }
+img {
+  width: ${((props) => (props.size === 'small' ? '7px' : '15px'))};
+  height: 100%;
+  vertical-align: middle;
+}
 `;
 
 export default CounterButton;
