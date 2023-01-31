@@ -65,8 +65,8 @@ export default function ProgramItem({ program }) {
   } = program;
 
   return (
-    <Link to={`/programs/${id}`}>
-      <ItemWrapper>
+    <ItemWrapper>
+      <Link to={`/programs/${id}`}>
         <ImageWrapper>
           <img src={imageUrl} alt="프로그램 썸네일" />
         </ImageWrapper>
@@ -80,7 +80,7 @@ export default function ProgramItem({ program }) {
             <address>{shortAddressFormat(place.address)}</address>
           </PriceAndAddress>
         </DescWrapper>
-      </ItemWrapper>
-    </Link>
+      </Link>
+    </ItemWrapper>
   );
 }
