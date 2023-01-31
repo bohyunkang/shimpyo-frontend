@@ -1,7 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 import { WhiteBack, BlackBack } from '../../../assets/icons/button';
+
+import useReservationStore from '../../../hooks/useReservationStore';
 
 const Button = styled.button`
   width: 11px;
@@ -12,9 +15,24 @@ const Button = styled.button`
 `;
 
 export default function BackButton({ color }) {
+  const reservationStore = useReservationStore();
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const { pathname } = location;
 
   const handleClickBack = () => {
+    if (pathname.startsWith('/reservation')) {
+      if (reservationStore.currentProcess === 0) {
+        navigate(-1);
+        return;
+      }
+
+      reservationStore.goToPreviousProcess();
+      return;
+    }
+
     navigate(-1);
   };
 
