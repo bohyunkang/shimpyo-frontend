@@ -18,6 +18,7 @@ const theme = {
     black: '#333333',
     purple: '#A351FB',
     lightGray: '#A8A8A8',
+    white: '#F7F7F7',
   },
   spacing: {
   },
