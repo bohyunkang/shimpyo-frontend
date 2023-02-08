@@ -8,6 +8,72 @@ import config from './config';
 const baseUrl = config.apiBaseUrl;
 
 const server = setupServer(
+  rest.post(`${baseUrl}/session`, async (req, res, ctx) => {
+    const { email, password } = await req.json();
+
+    if (email === 'healing@shimpyo.com' && password === 'Healing1234!') {
+      return res(
+        ctx.json({
+          accessToken: 'ACCESS.TOKEN',
+          nickname: '강힐링',
+        }),
+      );
+    }
+
+    return res(ctx.status(400));
+  }),
+
+  rest.post(`${baseUrl}/users`, async (req, res, ctx) => {
+    const {
+      name, email, password, confirmPassword, nickname,
+    } = await req.json();
+
+    if (name === '강힐링'
+    && email === 'healing@shimpyo.com'
+    && password === 'Healing1234!'
+    && confirmPassword === 'Healing1234!'
+    && nickname === '힐링이필요해') {
+      return res(
+        ctx.json({
+          id: 1,
+          email: 'healing@shimpyo.com',
+          name: '강힐링',
+          nickname: '힐링이필요해',
+        }),
+      );
+    }
+
+    return res(
+      ctx.status(400),
+    );
+  }),
+
+  rest.get(`${baseUrl}/user/me`, async (req, res, ctx) => res(
+    ctx.json({
+      email: 'healing@shimpyo.com',
+      name: '강힐링',
+      nickname: '힐링이필요해',
+    }),
+  )),
+
+  rest.get(`${baseUrl}/users/count`, async (req, res, ctx) => {
+    const email = req.url.searchParams.get('email');
+
+    if (email === 'healing@email.com') {
+      return res(
+        ctx.json({
+          count: 1,
+        }),
+      );
+    }
+
+    return res(
+      ctx.json({
+        count: 0,
+      }),
+    );
+  }),
+
   rest.get(`${baseUrl}/programs`, async (req, res, ctx) => res(
     ctx.json({
       programs: [
