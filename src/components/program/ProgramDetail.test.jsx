@@ -12,6 +12,11 @@ jest.mock('react-router-dom', () => ({
   useNavigate() {
     return navigate;
   },
+  useLocation() {
+    return {
+      pathname: '',
+    };
+  },
 }));
 
 test('ProgramDetail', async () => {
