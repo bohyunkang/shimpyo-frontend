@@ -4,11 +4,10 @@ import useReservationStore from '../../hooks/useReservationStore';
 
 import BackButton from '../common/button/BackButton';
 import ProcessTitle from '../common/title/ProcessTitle';
-import CompletionButton from './CompletionButton';
-
 import MainTitle from '../common/title/MainTitle';
 import CounterMinusButton from '../common/button/CounterMinusButton';
 import CounterPlusButton from '../common/button/CounterPlusButton';
+import CompletionButton from './CompletionButton';
 
 const Container = styled.article`
   position: relative;

@@ -1,20 +1,13 @@
 import styled from 'styled-components';
 
-import Image from '../../assets/mocks/백련사.png';
-import { lineBreakFormat } from '../../utils/format';
+import Image from '../../../assets/mocks/백련사.png';
+import { lineBreakFormat } from '../../../utils/format';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   margin-bottom: 10px;
 
   background-color: ${({ theme }) => theme.colors.background};
-`;
-
-const ProgramSectionTitle = styled.h2`
-  padding: 16px 0 0 16px;
-
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
 `;
 
 const Content = styled.div`
@@ -99,7 +92,7 @@ export default function SelectedProgram() {
 
   return (
     <Container>
-      <ProgramSectionTitle>선택 상품 정보</ProgramSectionTitle>
+      <PageSectionTitle top>선택 상품 정보</PageSectionTitle>
       <Content>
         <ImageTitleWrapper>
           <ImageWrapper>
@@ -109,7 +102,7 @@ export default function SelectedProgram() {
             {/* TODO: 쉼표(breakpoint)가 없는 경우에 어떻게 해야할지 고민 필요 */}
             <h3>{lineBreakFormat(title, ',')}</h3>
             <h4>70,000원</h4>
-            <p>체크인 2023.01.09 (월) - 체크아웃 2023.01.10 (금)</p>
+            <p>체크인 2023.01.09 (월) - 체크아웃 2023.01.10 (화)</p>
           </TitleWrapper>
         </ImageTitleWrapper>
         <OptionWrapper>

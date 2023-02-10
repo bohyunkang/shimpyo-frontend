@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../common/title/ui/PageSectionTitle';
 import PurpleButton from '../common/button/PurpleButton';
 
 const Container = styled.article`
@@ -44,7 +44,7 @@ export default function PlaceDescription({ place }) {
 
   return (
     <Container>
-      <ProgramSectionTitle>스테이 소개</ProgramSectionTitle>
+      <PageSectionTitle>스테이 소개</PageSectionTitle>
       <Content>
         <Description isMore={showMore}>{description}</Description>
         <PurpleButton

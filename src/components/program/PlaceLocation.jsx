@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { phoneNumberFormat } from '../../utils/format';
 import { isPickUp } from '../../utils/message';
 
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../common/title/ui/PageSectionTitle';
 import PurpleButton from '../common/button/PurpleButton';
 
 const Container = styled.article`
@@ -83,9 +83,9 @@ export default function PlaceLocation({ place }) {
 
   return (
     <Container>
-      <ProgramSectionTitle id="map">
+      <PageSectionTitle id="map">
         찾아오시는 길
-      </ProgramSectionTitle>
+      </PageSectionTitle>
       <MapWrapper>
         {/* TODO: 지도 연동해야 함 */}
         <p>지도 들어갈 자리</p>

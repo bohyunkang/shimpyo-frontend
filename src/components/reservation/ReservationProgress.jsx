@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+
 import BackButton from '../common/button/BackButton';
 import ProcessTitle from '../common/title/ProcessTitle';
-import BookerInformation from './BookerInformation';
+import BookerInformation from './progress/BookerInformation';
+import Requirement from './progress/Requirement';
+import SelectedProgram from './progress/SelectedProgram';
+import TotalPrice from './progress/TotalPrice';
 import CompletionButton from './CompletionButton';
-import Requirement from './Requirement';
-import SelectedProgram from './SelectedProgram';
-import TotalPrice from './TotalPrice';
+
+import useReservationStore from '../../hooks/useReservationStore';
 
 const Container = styled.article`
   position: relative;
@@ -22,9 +25,11 @@ const BackButtonWrapper = styled.div`
   z-index: 1;
 `;
 
-export default function ReservationDetail() {
+export default function ReservationProgress() {
+  const reservationStore = useReservationStore();
+
   const handleClickNext = () => {
-    // TODO: 다음 화면으로 넘어가게 설정
+    reservationStore.goToNextProcess();
   };
 
   return (
@@ -33,12 +38,6 @@ export default function ReservationDetail() {
         <BackButton color="black" />
       </BackButtonWrapper>
       <ProcessTitle title="예약하기" />
-      {/*
-        1. 선택 상품 정보 (O)
-        2. 예약자 정보
-        3. 요청사항
-        4. 금액 정보
-      */}
       <SelectedProgram />
       <BookerInformation />
       <Requirement />

@@ -14,10 +14,11 @@ import ProtectedRoute from './ProtectedRoute';
 
 import HomePage from './pages/Home/HomePage';
 import CategoryPage from './pages/Category/CategoryPage';
+import ProgramDetailPage from './pages/program/ProgramDetailPage';
 import ReservationPage from './pages/reservation/ReservationPage';
 import ReservationHistoryPage from './pages/reservation/ReservationHistoryPage';
+import ReservationDetailPage from './pages/reservation/ReservationDetailPage';
 import ProfilePage from './pages/profile/ProfilePage';
-import ProgramDetailPage from './pages/program/ProgramDetailPage';
 import LoginPage from './pages/login/LoginPage';
 import SignupPage from './pages/signup/SignupPage';
 import ScrollToTop from './components/common/ScrollToTop';
@@ -48,6 +49,7 @@ export default function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/programs" element={<CategoryPage />} />
         <Route path="/programs/:id" element={<ProgramDetailPage />} />
+        <Route path="/reservations/:id" element={<ReservationDetailPage />} />
         <Route
           path="/reservation"
           element={(

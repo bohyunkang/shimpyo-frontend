@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { useState } from 'react';
 import MoreButton from '../common/button/ui/MoreButton';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../common/title/ui/PageSectionTitle';
 
 import CATEGORY_TYPE from '../../constants/category';
 
@@ -68,7 +68,7 @@ export default function ProgramIntroduction({ category }) {
 
   return (
     <Container>
-      <ProgramSectionTitle>프로그램 소개</ProgramSectionTitle>
+      <PageSectionTitle>프로그램 소개</PageSectionTitle>
       <Title>{introduction.title}</Title>
       <img src={introduction.thumbnail} alt="템플스테이 대표 사진" />
       <Content>

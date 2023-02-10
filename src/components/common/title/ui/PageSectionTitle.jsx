@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const ProgramSectionTitle = styled.h2`
-  padding: 30px 0 10px 16px;
+const PageSectionTitle = styled.h2`
+  padding: ${((props) => (props.top ? '16px 0 0 16px' : '30px 0 10px 16px'))};
 
   font-size: 18px;
   font-weight: 600;
@@ -11,4 +11,4 @@ const ProgramSectionTitle = styled.h2`
   color: ${({ theme }) => theme.textColors.default};
 `;
 
-export default ProgramSectionTitle;
+export default PageSectionTitle;

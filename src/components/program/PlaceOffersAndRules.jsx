@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { timeFormat } from '../../utils/format';
 
 import PLACE_OFFERS from '../../constants/placeOffers';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -113,7 +113,7 @@ export default function PlaceOffersAndRules({ offers, time, rules }) {
   return (
     <Container>
       <Offers>
-        <ProgramSectionTitle>편의시설 및 서비스</ProgramSectionTitle>
+        <PageSectionTitle>편의시설 및 서비스</PageSectionTitle>
         <ServiceList>
           {services.map((service) => (
             <li key={service.id}>
@@ -126,7 +126,7 @@ export default function PlaceOffersAndRules({ offers, time, rules }) {
         </ServiceList>
       </Offers>
       <Rules>
-        <ProgramSectionTitle>이용규칙</ProgramSectionTitle>
+        <PageSectionTitle>이용규칙</PageSectionTitle>
         <TableWrapper>
           <Table>
             <thead>

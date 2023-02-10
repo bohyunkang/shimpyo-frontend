@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-
 import Search from './search.svg';
+import Check from './check.svg';
 
-export { Search };
+export { Search, Check };

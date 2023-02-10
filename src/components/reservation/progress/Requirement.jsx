@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
-import Textarea from '../common/input/ui/Textarea';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
+import Textarea from '../../common/input/ui/Textarea';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -31,7 +31,7 @@ const Message = styled.p`
 export default function Requirement() {
   return (
     <Container>
-      <ProgramSectionTitle>요청 사항</ProgramSectionTitle>
+      <PageSectionTitle>요청 사항</PageSectionTitle>
       <Content>
         <TextareaWrapper>
           <Label htmlFor="textarea-requirement">별도 요청사항</Label>
