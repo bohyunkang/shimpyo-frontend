@@ -11,8 +11,8 @@ const Label = styled.label`
 const Input = styled.input`
   appearance: none;
   
-  width: 18px;
-  height: 18px;
+  width: ${((props) => props.width)};
+  height: ${((props) => props.height)};
   
   margin: 0;
 
@@ -35,12 +35,16 @@ const Text = styled.p`
   color: ${({ theme }) => theme.textColors.content};
 `;
 
-export default function CheckBox({ name, text }) {
+export default function WhiteCheckBox({
+  name, text, width = '18px', height = '18px',
+}) {
   return (
     <Label htmlFor={name}>
       <Input
         type="checkbox"
         id={name}
+        width={width}
+        height={height}
       />
       <Text>{text}</Text>
     </Label>

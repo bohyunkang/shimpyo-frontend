@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
-import { Check } from '../../../assets/icons/input';
-import CheckBox from '../../common/input/CheckBox';
+import WhiteCheckBox from '../../common/input/WhiteCheckBox';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -91,7 +90,7 @@ export default function ReservationInformation() {
         </ListWrapper>
         <div>
           <CheckBoxWrapper>
-            <CheckBox
+            <WhiteCheckBox
               name="input-checkbox"
               text="예약자와 투숙자가 다를 경우 체크해주세요."
             />
