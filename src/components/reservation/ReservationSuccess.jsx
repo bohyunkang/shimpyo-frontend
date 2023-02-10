@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { CompletionICon } from '../../assets/icons/reservation';
+import ScrollToTop from '../common/ScrollToTop';
 
 export default function ReservationSuccess() {
   const id = 182689;
 
   return (
     <article>
+      <ScrollToTop />
       <div>
         <div>
           <div>

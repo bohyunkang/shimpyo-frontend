@@ -31,7 +31,8 @@ const DescWrapper = styled.div`
   justify-content: space-between;
   align-items: baseline;
 
-  padding-block: 13px;
+  /* TODO: 쿠폰 기능 구현 시 활성화 */
+  /* padding-block: 13px; */
 `;
 
 const Total = styled.dl`
@@ -49,7 +50,8 @@ export default function PaymentAmount() {
     <Container>
       <PageSectionTitle>결제 금액</PageSectionTitle>
       <Content>
-        <Detail>
+        {/* TODO: 쿠폰 기능 구현 시 활성화 */}
+        {/* <Detail>
           <DescWrapper>
             <dt>결제 금액</dt>
             <dd>90,200원</dd>
@@ -62,7 +64,7 @@ export default function PaymentAmount() {
             <dt>포인트 사용</dt>
             <dd>0원</dd>
           </DescWrapper>
-        </Detail>
+        </Detail> */}
         <Total>
           <DescWrapper>
             <dt>총 결제 금액</dt>

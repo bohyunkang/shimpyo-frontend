@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import BackButton from '../common/button/BackButton';
 import ProcessTitle from '../common/title/ProcessTitle';
 import ReservationInformation from './payment/ReservationInformation';
-import PaymentPromotion from './payment/PaymentPromotion';
 import PaymentAmount from './payment/PaymentAmount';
 import PaymentMethodAndAgreement from './payment/PaymentMethodAndAgreement';
 import CompletionButton from './CompletionButton';
 
 import useReservationStore from '../../hooks/useReservationStore';
+import ScrollToTop from '../common/ScrollToTop';
 
 const Container = styled.article`
   position: relative;
@@ -34,12 +34,14 @@ export default function PaymentDetail() {
 
   return (
     <Container>
+      <ScrollToTop />
       <BackButtonWrapper>
         <BackButton color="black" />
       </BackButtonWrapper>
       <ProcessTitle title="결제하기" />
       <ReservationInformation />
-      <PaymentPromotion />
+      {/* TODO: 쿠폰 기능 구현 시 활성화 */}
+      {/* <PaymentPromotion /> */}
       <PaymentAmount />
       <PaymentMethodAndAgreement />
       <CompletionButton

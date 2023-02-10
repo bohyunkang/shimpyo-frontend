@@ -8,6 +8,7 @@ import MainTitle from '../common/title/MainTitle';
 import CounterMinusButton from '../common/button/CounterMinusButton';
 import CounterPlusButton from '../common/button/CounterPlusButton';
 import CompletionButton from './CompletionButton';
+import ScrollToTop from '../common/ScrollToTop';
 
 const Container = styled.article`
   position: relative;
@@ -99,6 +100,7 @@ export default function ParticipantSetting() {
 
   return (
     <Container>
+      <ScrollToTop />
       <BackButtonWrapper>
         <BackButton color="black" />
       </BackButtonWrapper>

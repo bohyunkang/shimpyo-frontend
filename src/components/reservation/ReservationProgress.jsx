@@ -9,6 +9,7 @@ import TotalPrice from './progress/TotalPrice';
 import CompletionButton from './CompletionButton';
 
 import useReservationStore from '../../hooks/useReservationStore';
+import ScrollToTop from '../common/ScrollToTop';
 
 const Container = styled.article`
   position: relative;
@@ -34,6 +35,7 @@ export default function ReservationProgress() {
 
   return (
     <Container>
+      <ScrollToTop />
       <BackButtonWrapper>
         <BackButton color="black" />
       </BackButtonWrapper>

@@ -7,6 +7,7 @@ import ProcessTitle from '../common/title/ProcessTitle';
 import CompletionButton from './CompletionButton';
 
 import useReservationStore from '../../hooks/useReservationStore';
+import ScrollToTop from '../common/ScrollToTop';
 
 const Container = styled.article`
   position: relative;
@@ -56,6 +57,7 @@ export default function GuestRoomSetting() {
 
   return (
     <Container>
+      <ScrollToTop />
       <BackButtonWrapper>
         <BackButton color="black" />
       </BackButtonWrapper>
