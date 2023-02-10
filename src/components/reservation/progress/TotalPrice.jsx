@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   background-color: ${({ theme }) => theme.colors.background};
@@ -41,7 +41,7 @@ const Total = styled.dl`
 export default function TotalPrice() {
   return (
     <Container>
-      <ProgramSectionTitle>금액 정보</ProgramSectionTitle>
+      <PageSectionTitle>금액 정보</PageSectionTitle>
       <Content>
         <Detail>
           <DescWrapper>

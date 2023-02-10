@@ -4,7 +4,8 @@ export default class ReservationStore extends Store {
   constructor() {
     super();
 
-    this.currentProcess = 0;
+    // TODO: 스타일링 위해서 일시적으로 4번으로 해놓음. 0으로 바껴야 함
+    this.currentProcess = 3;
 
     this.programId = 0;
     this.participants = {

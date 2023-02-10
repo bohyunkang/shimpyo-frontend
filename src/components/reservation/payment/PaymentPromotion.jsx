@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import styled from 'styled-components';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -24,10 +24,10 @@ const InputWrapper = styled.div`
   }
 `;
 
-export default function PromotionPayment() {
+export default function PaymentPromotion() {
   return (
     <Container>
-      <ProgramSectionTitle>할인 수단 선택</ProgramSectionTitle>
+      <PageSectionTitle>할인 수단 선택</PageSectionTitle>
       <Content>
         <SelectBoxWrapper>
           <label htmlFor="coupon-select">
@@ -43,11 +43,9 @@ export default function PromotionPayment() {
             name="coupons"
             id="coupon-select"
           >
-            <option value="">
-              사용할 쿠폰을 선택해주세요
-            </option>
+            <option value="">사용할 쿠폰을 선택해주세요</option>
             <option value="welcome">
-              <h5>[신규회원] 웰컴쿠폰</h5>
+              <span>[신규회원] 웰컴쿠폰</span>
               <span>-5,000원</span>
             </option>
           </select>

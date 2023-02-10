@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -47,7 +47,7 @@ const Total = styled.dl`
 export default function PaymentAmount() {
   return (
     <Container>
-      <ProgramSectionTitle>결제 금액</ProgramSectionTitle>
+      <PageSectionTitle>결제 금액</PageSectionTitle>
       <Content>
         <Detail>
           <DescWrapper>

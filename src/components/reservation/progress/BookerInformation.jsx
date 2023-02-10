@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Input from '../common/input/ui/Input';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import Input from '../../common/input/ui/Input';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -36,7 +36,7 @@ const Message = styled.p`
 export default function BookerInformation() {
   return (
     <Container>
-      <ProgramSectionTitle>예약자 정보</ProgramSectionTitle>
+      <PageSectionTitle>예약자 정보</PageSectionTitle>
       <Content>
         <InputWrapper>
           <Label htmlFor="input-name">예약자 성명</Label>

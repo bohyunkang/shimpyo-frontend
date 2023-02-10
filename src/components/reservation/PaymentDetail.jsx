@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 import BackButton from '../common/button/BackButton';
 import ProcessTitle from '../common/title/ProcessTitle';
+import ReservationInformation from './payment/ReservationInformation';
+import PaymentPromotion from './payment/PaymentPromotion';
+import PaymentAmount from './payment/PaymentAmount';
+import PaymentMethodAndAgreement from './payment/PaymentMethodAndAgreement';
 import CompletionButton from './CompletionButton';
-import ReservationInformation from './ReservationInformation';
-import PaymentPromotion from './PaymentPromotion';
-import PaymentAmount from './PaymentAmount';
-import PaymentMethodAndAgreement from './PaymentMethodAndAgreement';
 
 import useReservationStore from '../../hooks/useReservationStore';
 

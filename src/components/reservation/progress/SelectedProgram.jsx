@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import Image from '../../assets/mocks/백련사.png';
-import { lineBreakFormat } from '../../utils/format';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import Image from '../../../assets/mocks/백련사.png';
+import { lineBreakFormat } from '../../../utils/format';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -92,7 +92,7 @@ export default function SelectedProgram() {
 
   return (
     <Container>
-      <ProgramSectionTitle top>선택 상품 정보</ProgramSectionTitle>
+      <PageSectionTitle top>선택 상품 정보</PageSectionTitle>
       <Content>
         <ImageTitleWrapper>
           <ImageWrapper>

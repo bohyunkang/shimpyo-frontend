@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ProgramSectionTitle from '../common/title/ui/ProgramSectionTitle';
+import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
 const Container = styled.article`
   margin-bottom: 10px;
@@ -15,7 +15,7 @@ export default function PaymentMethod() {
   return (
     <Container>
       <div>
-        <ProgramSectionTitle>결제 수단</ProgramSectionTitle>
+        <PageSectionTitle>결제 수단</PageSectionTitle>
         <Content>
           {/* TODO: 카카오페이 로고 이미지로 바껴야 함 */}
           <button type="button">카카오페이</button>
@@ -31,7 +31,7 @@ export default function PaymentMethod() {
       </div>
       <div>
         <div>
-          <ProgramSectionTitle>결제 이용 동의</ProgramSectionTitle>
+          <PageSectionTitle>결제 이용 동의</PageSectionTitle>
           <input
             type="checkbox"
             name="input-check-remember-payment-method"

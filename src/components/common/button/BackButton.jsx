@@ -23,7 +23,9 @@ export default function BackButton({ color }) {
   const { pathname } = location;
 
   const handleClickBack = () => {
-    if (pathname.startsWith('/reservation')) {
+    const url = pathname.split('/')[1];
+
+    if (url === 'reservation') {
       if (reservationStore.currentProcess === 0) {
         navigate(-1);
         return;
