@@ -14,7 +14,7 @@ describe('ProgramStore', () => {
       await programStore.fetchPrograms();
       const { programs } = programStore;
 
-      expect(programs).toHaveLength(1);
+      expect(programs).toHaveLength(2);
     });
   });
   context('fetchProgram', () => {
