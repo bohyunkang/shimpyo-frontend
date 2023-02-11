@@ -27,3 +27,13 @@ export function phoneNumberFormat(number) {
 export function lineBreakFormat(text, breakpoint) {
   return text.split(breakpoint).join(`${breakpoint}\n`);
 }
+
+export function dateFormat(date) {
+  const options = {
+    day: 'numeric',
+    month: 'long',
+    weekday: 'short',
+  };
+
+  return Intl.DateTimeFormat('ko-KR', options).format(date);
+}

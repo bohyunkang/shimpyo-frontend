@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { ArrowDownPink } from '../../assets/icons/program';
 
+import { dateFormat } from '../../utils/format';
+
 const Container = styled.article`
   display: flex;
   justify-content: space-between;
@@ -40,19 +42,23 @@ const Wrapper = styled.div`
 
 export default function DateSetting() {
   // TODO: 날짜 설정 시 해당 날짜에 맞는 결과물이 나와야 함.
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
   return (
     <Container>
       <Wrapper>
         <p>체크인</p>
         <button type="button">
-          <span>1월 9일(월)</span>
+          <span>{dateFormat(today)}</span>
           <img src={ArrowDownPink} alt="화살표 아래 아이콘" />
         </button>
       </Wrapper>
       <Wrapper>
         <p>체크아웃</p>
         <button type="button">
-          <span>1월 10일(화)</span>
+          <span>{dateFormat(tomorrow)}</span>
           <img src={ArrowDownPink} alt="화살표 아래 아이콘" />
         </button>
       </Wrapper>

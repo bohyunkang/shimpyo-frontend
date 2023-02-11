@@ -4,14 +4,21 @@ export default class ReservationStore extends Store {
   constructor() {
     super();
 
-    // TODO: 스타일링 위해서 일시적으로 4번으로 해놓음. 0으로 바껴야 함
-    this.currentProcess = 3;
+    this.currentProcess = 0;
 
     this.programId = 0;
-    this.participants = {
-      adult: { count: 0 },
-      child: { count: 0 },
+
+    this.reservationItem = {
+      programId: '',
+      roomId: '',
+      name: '',
+      checkInDate: new Date(),
+      checkOutDate: '',
+      adult: 0,
+      child: 0,
     };
+
+    this.createReservationStatus = '';
   }
 
   resetCurrentProcess() {
@@ -30,23 +37,69 @@ export default class ReservationStore extends Store {
     this.publish();
   }
 
+  resetCount() {
+    this.reservationItem = {
+      ...this.reservationItem,
+      adult: 0,
+      child: 0,
+    };
+
+    this.publish();
+  }
+
   countUp({ target }) {
-    this.participants[target] = {
-      count: this.participants[target].count += 1,
+    this.reservationItem = {
+      ...this.reservationItem,
+      [target]: this.reservationItem[target] += 1,
     };
 
     this.publish();
   }
 
   countDown({ target }) {
-    if (this.participants[target].count < 1) {
+    if (this.reservationItem[target] < 1) {
       return;
     }
 
-    this.participants[target] = {
-      count: this.participants[target].count -= 1,
+    this.reservationItem = {
+      ...this.reservationItem,
+      [target]: this.reservationItem[target] -= 1,
     };
 
+    this.publish();
+  }
+
+  async create() {
+    this.changeCreateReservationStatus('processing');
+
+    try {
+      const reservationDetails = {
+        reservationItem: this.reservationItem,
+        booker: {},
+        payment: {},
+        price: {},
+      };
+
+      // private Long programId;
+      // private Long roomId;
+      // private String name;
+      // private String checkInDate;
+      // private String checkOutDate;
+      // private Long numberOfAdult;
+      // private Long numberOfChild;
+
+      this.changeCreateReservationStatus('successful');
+
+      return '';
+    } catch (e) {
+      this.changeCreateReservationStatus('failed');
+
+      return '';
+    }
+  }
+
+  changeCreateReservationStatus(status) {
+    this.createReservationStatus = status;
     this.publish();
   }
 }
