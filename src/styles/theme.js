@@ -9,6 +9,8 @@ const theme = {
     secondary: '#66CFCA',
     border: '#E0E0E0',
     miniBorder: '#CCCCCC',
+    error: '#F02953',
+    lightError: '#FEF1F3',
   },
   textColors: {
     default: '#222222',
