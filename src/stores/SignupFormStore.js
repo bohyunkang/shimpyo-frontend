@@ -166,8 +166,9 @@ export default class SignupFormStore extends Store {
 
     const count = await apiService.countUser(this.fields.email);
 
-    if (count !== 0) {
+    if (count > 0) {
       this.errors.email = this.errorMessages.email.taken;
+      this.publish();
 
       return;
     }
