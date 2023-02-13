@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
 import styled from 'styled-components';
 import PageSectionTitle from '../../common/title/ui/PageSectionTitle';
 
