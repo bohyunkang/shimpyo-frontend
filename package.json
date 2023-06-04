@@ -4,6 +4,7 @@
   "description": "힐링 예약 앱 서비스, 쉼표 프론트엔드 프로젝트",
   "scripts": {
     "start": "parcel index.html --port 8080",
+    "build": "parcel build index.html",
     "lint": "eslint --fix --ext .js,.jsx .",
     "test": "jest",
     "watch:test": "npm test -- --watchAll",
